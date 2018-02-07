@@ -1,0 +1,1 @@
+{"version":3,"sources":["get-data.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA","file":"../main.js","sourcesContent":["$.ajax({\n    url: 'https://randomuser.me/api/?results=12',\n    dataType: 'json',\n    success: function(data) {\n      console.log(data);\n    }\n  });"]}
