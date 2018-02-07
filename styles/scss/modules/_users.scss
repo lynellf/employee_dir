@@ -1,0 +1,18 @@
+.users {
+    align-self: center;
+    @include flex();
+    @include mq('lg') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: pem(16);
+        width: 100%;
+    }
+    
+    @include e('card') {
+        border: thin solid $site-border;
+        display: flex;
+        justify-content: space-around;
+        padding: pem(32);
+        border-radius: pem(6);
+    }
+}

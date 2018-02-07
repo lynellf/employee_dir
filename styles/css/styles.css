@@ -1,2 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Carrois+Gothic");
+* {
+  box-sizing: border-box; }
+
+.site {
+  background: #FCFCFC; }
+  .site__container {
+    display: flex;
+    flex-direction: column;
+    height: 85%; }
+
+.users {
+  align-self: center;
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 768px) {
+    .users {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1em;
+      width: 100%; } }
+  .users__card {
+    border: thin solid #DFDFDF;
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+    border-radius: 0.375em; }
+
+.card__info {
+  width: 50%; }
+
+.card__avy {
+  display: block;
+  border-radius: 50%;
+  height: 100%;
+  width: auto; }
 
 /*# sourceMappingURL=styles/css/styles.css.map */

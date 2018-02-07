@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     gulp.task('concatScripts', function() {
         return gulp
             .src([
-                './js/get-data.js'
+                './js/partials/*.js'
             ])
             .pipe(maps.init())
             .pipe(concat('main.js'))
@@ -53,7 +53,7 @@ gulp.task('build', ['minifyScripts', 'compileSass'], function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['styles/scss/**/*.scss', 'js/*.js'], ['build']);
+    gulp.watch(['styles/scss/**/*.scss', 'js/*.js', 'js/**/*.js'], ['build']);
 });
 
 gulp.task('default', ['clean'], function() {

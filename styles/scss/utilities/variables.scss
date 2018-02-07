@@ -1,0 +1,34 @@
+//====================================================
+// Colors
+//====================================================
+$tundora: #4A4A4A;
+$alto: #DFDFDF;
+$alabaster: #FCFCFC;
+
+$site-font: $tundora;
+$site-border: $alto;
+$site-background: $alabaster;
+//====================================================
+// Font
+//====================================================
+$font-url: ('https://fonts.googleapis.com/css?family=Carrois+Gothic');
+$font-stack-primary: 'Open Sans', sans-serif;
+//====================================================
+// Functions
+//====================================================
+// Converts pixels to ems
+@function pem($pixels) {
+  @return ($pixels/16 *1em);
+}
+
+// Load imported fonts
+@if variable-exists(font-url) {
+  @import url($font-url);
+}
+
+//=====================================================
+//Breakpoints
+//=====================================================
+$breaks: ('lg': 768px);
+
+

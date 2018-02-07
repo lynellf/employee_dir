@@ -1,0 +1,7 @@
+.site {
+    background: $site-background;
+    @include e('container') {
+        @include flex();
+        height: 85%;
+    }
+}

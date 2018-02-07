@@ -1,0 +1,21 @@
+.card {
+  @include e('info') {
+      width: 50%;
+  }
+
+  @include e('name') {
+  }
+
+  @include e('email') {
+  }
+
+  @include e('city') {
+  }
+
+  @include e('avy') {
+    display: block;
+    border-radius: 50%;
+    height: 100%;
+    width: auto;
+  }
+}

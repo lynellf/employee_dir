@@ -39,6 +39,3 @@ $.ajax({
       }
     }
   });
-var users = [],
-    userDir = document.querySelector('.users');
-//# sourceMappingURL=js/main.js.map
