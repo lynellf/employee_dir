@@ -2,15 +2,24 @@
     background: $site-background;
     position: relative;
     @include e('container') {
-        position: absolute;
         @include flex();
         padding: pem(8);
     }
     @include e('overlay') {
         position: absolute;
-        top: 50%;
+        top: 0%;
+        opacity: .4;
         background: gray;
-        height: 100vh;
+        height: 100%;
+        width: 100%;
         z-index: 100;
+        @include mq('lg') {
+            height: 100vh;
+        }
+    }
+    @include e('employee') {
+        position: absolute;
+        background: $alabaster;
+        z-index: 101;
     }
 }
