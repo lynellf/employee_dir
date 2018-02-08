@@ -17,11 +17,23 @@
 // Media Queries
 // ==========================================================================
 @mixin mq($break) {
-    $lg: map-get($breaks, 'lg');
-    @if $break=='lg' {
-        @media (min-width: $lg) {
+    $value: map-get($breaks, $break);
+    $med: map-get($breaks, 'med');
+    
+    @if $value == null {
+        @error "`#{$break}` is not a valid breakpoint name";
+    }
+
+    @else if $value < $med {
+        @media(max-width: $value) {
             @content;
         }
+    }
+
+    @else {
+        @media (min-width: $value) {
+            @content;
+}
     }
 }
 // ==========================================================================

@@ -5,6 +5,7 @@ $.ajax({
     success: function(data) {
       
       users = data.results;
+      console.log(data);
       for(var i = 0; i < users.length; i++) {
 
         // Generate DOM elements
@@ -21,13 +22,13 @@ $.ajax({
           email.className = 'card__email';
           city.className = 'card__city';
           avy.className = 'card__avy';
+          userCard.className = 'users__card';
 
           // Insert generated content for each element
-          avy.src = users[i]['picture']['medium'];
+          avy.src = users[i]['picture']['large'];
           name.textContent = users[i]['name']['first'] + ' ' + users[i]['name']['last'];
           email.textContent = users[i]['email'];
           city.textContent = users[i]['location']['city'];
-          userCard.className = 'users__card';
           
           // Append each element to the DOM
           info.appendChild(name);
@@ -37,8 +38,11 @@ $.ajax({
           userCard.appendChild(info);
           userDir.appendChild(userCard);
       }
+      // Set card array for further DOM manipulation
+      cards = document.querySelectorAll('.users__card');
     }
   });
 var users = [],
+    cards = [],
     userDir = document.querySelector('.users');
 //# sourceMappingURL=js/main.js.map

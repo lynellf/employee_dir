@@ -1,24 +1,38 @@
 @import url("https://fonts.googleapis.com/css?family=Carrois+Gothic");
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif; }
 
 .site {
-  background: #FCFCFC; }
+  background: #FCFCFC;
+  position: relative; }
   .site__container {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    height: 85%; }
+    padding: 0.5em; }
+  .site__overlay {
+    position: absolute;
+    top: 50%;
+    background: gray;
+    height: 100vh;
+    z-index: 100; }
 
 .users {
   align-self: center;
+  width: 95%;
   display: flex;
   flex-direction: column; }
   @media (min-width: 768px) {
     .users {
       display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1em; } }
+  @media (min-width: 1024px) {
+    .users {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 1em;
-      width: 100%; } }
+      grid-gap: 1em; } }
   .users__card {
     border: thin solid #DFDFDF;
     display: flex;
@@ -29,10 +43,19 @@
 .card__info {
   width: 50%; }
 
+.card__email {
+  display: block;
+  color: gray;
+  font-size: 0.875em; }
+
+.card__city {
+  display: block;
+  color: gray;
+  font-size: 0.875em;
+  margin-top: 0.5em; }
+
 .card__avy {
   display: block;
-  border-radius: 50%;
-  height: 100%;
-  width: auto; }
+  border-radius: 50%; }
 
 /*# sourceMappingURL=styles/css/styles.css.map */
