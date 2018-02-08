@@ -62,10 +62,12 @@ setTimeout(function() {
       // We want to capture the event at the upmost parent element.
       if (event.currentTarget.className === 'users__card') {
         var currentCard = event.currentTarget,
-          topPosition = (event.pageY / document.body.scrollHeight * 100).toString(),
-          leftPosition = (event.pageX / window.innerWidth * 100).toString(),
+        node = nodes.indexOf(currentCard),
+        cardPosition = cards[node].getBoundingClientRect(),
+        topPosition = (event.pageY / document.body.scrollHeight * 100).toString(),
+          leftPosition = (cardPosition['left'] / window.innerWidth * 100).toString(),
         //   rightPosition = ((event.pageX / window.innerWidth * 100)).toString(),
-          node = nodes.indexOf(currentCard),
+          rect = cards[node].getBoundingClientRect(),
           // Generate DOM elements
           basicInfo = document.createElement('div'),
           moreInfo = document.createElement('div'),
@@ -126,9 +128,10 @@ setTimeout(function() {
         employeeDetails.appendChild(moreInfo);
 
         console.log(event);
+        console.log(rect);
       }
     });
   }
-}, 500);
+}, 900);
 
 //# sourceMappingURL=js/main.js.map

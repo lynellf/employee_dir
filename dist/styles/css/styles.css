@@ -18,9 +18,6 @@
     height: 100%;
     width: 100%;
     z-index: 100; }
-    @media (min-width: 1024px) {
-      .site__overlay {
-        height: 100vh; } }
   .site__employee {
     position: absolute;
     background: #FCFCFC;
