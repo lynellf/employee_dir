@@ -4,7 +4,9 @@
 
 .directory {
   background: #FCFCFC;
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-direction: column; }
   .directory__container {
     min-height: 100vh;
     display: flex;
@@ -74,19 +76,34 @@
   position: absolute;
   background: #FCFCFC;
   z-index: 101;
-  border-radius: 0.375em; }
+  border-radius: 0.375em;
+  align-self: center;
+  display: flex;
+  flex-direction: column; }
   @media (max-width: 425px) {
     .modal {
-      width: 15.625em;
-      left: 20%;
-      margin: auto; } }
+      width: 18.75em; } }
+  @media (min-width: 868px) {
+    .modal {
+      width: 31.25em;
+      padding: 2em 0; } }
   .modal__basic {
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1em 0.5em; }
+    margin: 1em;
+    border-bottom: thin solid #DFDFDF;
+    width: 85%; }
   .modal__close {
-    align-self: flex-end; }
+    align-self: flex-end;
+    display: block; }
+    @media (max-width: 425px) {
+      .modal__close {
+        padding-right: 1.25em; } }
+    @media (min-width: 868px) {
+      .modal__close {
+        padding-right: 3.125em; } }
   .modal__avy {
     display: block;
     align-self: center;
@@ -99,6 +116,24 @@
     color: #4A4A4A;
     margin-bottom: 0.5em; }
   .modal__city {
+    align-self: center;
+    color: #4A4A4A;
+    margin-bottom: 0.5em; }
+  .modal__more {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%; }
+  .modal__phone {
+    align-self: center;
+    color: #4A4A4A;
+    margin-bottom: 0.5em; }
+  .modal__birthdate {
+    align-self: center;
+    color: #4A4A4A;
+    margin-bottom: 0.5em; }
+  .modal__address {
     align-self: center;
     color: #4A4A4A;
     margin-bottom: 0.5em; }

@@ -1,6 +1,8 @@
 .directory {
     background: $site-background;
     position: relative;
+    display: flex;
+    flex-direction: column;
     @include e('container') {
         min-height: 100vh;
         @include flex();

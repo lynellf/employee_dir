@@ -3,21 +3,37 @@
     background: $alabaster;
     z-index: 101;
     border-radius: pem(6);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
     @include mq('sm') {
-        width: pem(250);
-        left: 20%;
-        margin: auto;
+        width: pem(300);
+    }
+
+    @include mq('med') {
+        width: pem(500);
+        padding: pem(32) 0;
     }
 
     @include e('basic') {
+        align-self: center;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: pem(16) pem(8);
+        margin: pem(16);
+        border-bottom: thin solid $site-border;
+        width: 85%;
     }
 
     @include e('close') {
         align-self: flex-end;
+        display: block;
+        @include mq('sm') {
+            padding-right: pem(20);
+        }
+        @include mq('med') {
+            padding-right: pem(50);
+        }
     }
 
     @include e('avy') {
@@ -44,6 +60,29 @@
     }
 
     @include e('more') {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 85%;
+        // margin: pem(16) pem(16);
+    }
 
+    @include e('phone') {
+        align-self: center;
+        color: $site-font;
+        margin-bottom: pem(8);
+    }
+
+    @include e('birthdate') {
+        align-self: center;
+        color: $site-font;
+        margin-bottom: pem(8);
+    }
+
+    @include e('address') {
+        align-self: center;
+        color: $site-font;
+        margin-bottom: pem(8);
     }
 }

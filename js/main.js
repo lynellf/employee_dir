@@ -84,14 +84,19 @@ setTimeout(function() {
           birthdate = document.createElement('span');
 
         // Set classNames and attributes
-        xIcon.className = 'modal__close';
+          // Basic info
         basicInfo.className = 'modal__basic';
+        xIcon.className = 'modal__close';
         name.className = 'modal__name';
         email.className = 'modal__email';
         city.className = 'modal__city';
         avy.src = users[node]['picture']['large'];
         avy.className = 'modal__avy';
+          // More info
         moreInfo.className = 'modal__more';
+        phone.className = 'modal__phone';
+        address.className = 'modal__address';
+        birthdate.className = 'modal__birthdate';
         overlay.className = 'directory__overlay';
 
         // Insert generated content for each element
@@ -113,7 +118,7 @@ setTimeout(function() {
           users[node]['location']['state'] +
           ' ' +
           users[node]['location']['postcode'];
-        birthdate.textContent = users[node]['dob'];
+        birthdate.textContent = 'Birthdate: ' + users[node]['dob'];
 
         employeeDetails.className = 'modal';
         employeeDetails.style.top = topPosition + '%';
@@ -121,7 +126,6 @@ setTimeout(function() {
         // employeeDetails.style.left = '35%';
         // employeeDetails.style.right = rightPosition + '%';
         // Basic Info
-        basicInfo.appendChild(xIcon);
         basicInfo.appendChild(avy);
         basicInfo.appendChild(name);
         basicInfo.appendChild(email);
@@ -130,6 +134,7 @@ setTimeout(function() {
         moreInfo.appendChild(phone);
         moreInfo.appendChild(address);
         moreInfo.appendChild(birthdate);
+        employeeDetails.appendChild(xIcon);
         employeeDetails.appendChild(basicInfo);
         employeeDetails.appendChild(moreInfo);
 
