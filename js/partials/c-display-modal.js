@@ -16,9 +16,7 @@ setTimeout(function() {
         node = nodes.indexOf(currentCard),
         cardPosition = cards[node].getBoundingClientRect(),
         topPosition = ((window.pageYOffset/document.body.scrollHeight * 100) + 10).toString(),
-        // topPosition = (event.pageY / document.body.scrollHeight * 100).toString(),
-        //   leftPosition = (cardPosition['left'] / window.innerWidth * 100).toString(),
-        //   rightPosition = ((event.pageX / window.innerWidth * 100)).toString(),
+        date = new Date(users[node]['dob']),
           rect = cards[node].getBoundingClientRect(),
           // Generate DOM elements
           basicInfo = document.createElement('div'),
@@ -53,23 +51,23 @@ setTimeout(function() {
         // Insert generated content for each element
         xIcon.textContent = 'x';
         name.textContent =
-          users[node]['name']['first'] +
+          users[node]['name']['first'].charAt(0).toUpperCase() +
           ' ' +
-          users[node]['name']['last'];
+          users[node]['name']['last'].charAt(0).toUpperCase();
         email.textContent = users[node]['email'];
-        city.textContent = users[node]['location']['city'];
+        city.textContent = users[node]['location']['city'].charAt(0).toUpperCase();
         // More info
         phone.textContent = users[node]['cell'];
 
         address.textContent =
-          users[node]['location']['street'] +
-          users[node]['location']['city'] +
+          users[node]['location']['street'].charAt(0).toUpperCase() +
+          users[node]['location']['city'].charAt(0).toUpperCase() +
           ',' +
           ' ' +
-          users[node]['location']['state'] +
+          users[node]['location']['state'].charAt(0).toUpperCase() +
           ' ' +
           users[node]['location']['postcode'];
-        birthdate.textContent = 'Birthdate: ' + users[node]['dob'];
+        birthdate.textContent = 'Birthdate: ' + date.getFullYear() + '/' + (date.getMonth()+1) + '/' + date.getDate();
 
         employeeDetails.className = 'modal';
         employeeDetails.style.top = topPosition + '%';
