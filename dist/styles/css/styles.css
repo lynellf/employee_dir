@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Carrois+Gothic");
 * {
-  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif; }
 
-.site {
+.directory {
   background: #FCFCFC;
   position: relative; }
-  .site__container {
+  .directory__container {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 0.5em; }
-  .site__overlay {
+  .directory__overlay {
     position: absolute;
     top: 0%;
     opacity: .4;
@@ -18,22 +18,18 @@
     height: 100%;
     width: 100%;
     z-index: 100; }
-  .site__employee {
-    position: absolute;
-    background: #FCFCFC;
-    z-index: 101; }
 
 .users {
   align-self: center;
   width: 95%;
   display: flex;
   flex-direction: column; }
-  @media (min-width: 768px) {
+  @media (min-width: 868px) {
     .users {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 1em; } }
-  @media (min-width: 1024px) {
+  @media (min-width: 1310px) {
     .users {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -51,16 +47,60 @@
 .card__email {
   display: block;
   color: gray;
-  font-size: 0.875em; }
+  font-size: 0.625em; }
+  @media (min-width: 868px) {
+    .card__email {
+      font-size: 0.875em; } }
 
 .card__city {
   display: block;
   color: gray;
-  font-size: 0.875em;
-  margin-top: 0.5em; }
+  margin-top: 0.5em;
+  font-size: 0.625em; }
+  @media (min-width: 868px) {
+    .card__city {
+      font-size: 0.875em; } }
 
 .card__avy {
   display: block;
-  border-radius: 50%; }
+  border-radius: 50%;
+  width: auto;
+  height: 6.25em; }
+  @media (min-width: 868px) {
+    .card__avy {
+      height: 100%; } }
+
+.modal {
+  position: absolute;
+  background: #FCFCFC;
+  z-index: 101;
+  border-radius: 0.375em; }
+  @media (max-width: 425px) {
+    .modal {
+      width: 15.625em;
+      left: 20%;
+      margin: auto; } }
+  .modal__basic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em 0.5em; }
+  .modal__close {
+    align-self: flex-end; }
+  .modal__avy {
+    display: block;
+    align-self: center;
+    border-radius: 50%; }
+  .modal__name {
+    align-self: center;
+    margin-bottom: 0.5em; }
+  .modal__email {
+    align-self: center;
+    color: #4A4A4A;
+    margin-bottom: 0.5em; }
+  .modal__city {
+    align-self: center;
+    color: #4A4A4A;
+    margin-bottom: 0.5em; }
 
 /*# sourceMappingURL=styles/css/styles.css.map */

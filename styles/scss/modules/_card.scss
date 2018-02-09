@@ -9,18 +9,29 @@
   @include e('email') {
     display: block;
     color: gray;
-    font-size: pem(14);
+    font-size: pem(10);
+    @include mq('med') {
+      font-size: pem(14);
+    }
   }
 
   @include e('city') {
     display: block;
     color: gray;
-    font-size: pem(14);
     margin-top: pem(8);
+    font-size: pem(10);
+    @include mq('med') {
+      font-size: pem(14);
+    }
   }
 
   @include e('avy') {
     display: block;
     border-radius: 50%;
+    width: auto;
+    height: pem(100);
+    @include mq('med') {
+      height: 100%;
+    }
   }
 }

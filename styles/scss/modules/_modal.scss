@@ -1,0 +1,49 @@
+.modal {
+    position: absolute;
+    background: $alabaster;
+    z-index: 101;
+    border-radius: pem(6);
+    @include mq('sm') {
+        width: pem(250);
+        left: 20%;
+        margin: auto;
+    }
+
+    @include e('basic') {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: pem(16) pem(8);
+    }
+
+    @include e('close') {
+        align-self: flex-end;
+    }
+
+    @include e('avy') {
+        display: block;
+        align-self: center;
+        border-radius: 50%;
+    }
+
+    @include e('name') {
+        align-self: center;
+        margin-bottom: pem(8);
+    }
+
+    @include e('email') {
+        align-self: center;
+        color: $site-font;
+        margin-bottom: pem(8);
+    }
+
+    @include e('city') {
+        align-self: center;
+        color: $site-font;
+        margin-bottom: pem(8);
+    }
+
+    @include e('more') {
+
+    }
+}

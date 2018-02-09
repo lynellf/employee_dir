@@ -64,8 +64,9 @@ setTimeout(function() {
         var currentCard = event.currentTarget,
         node = nodes.indexOf(currentCard),
         cardPosition = cards[node].getBoundingClientRect(),
-        topPosition = (event.pageY / document.body.scrollHeight * 100).toString(),
-          leftPosition = (cardPosition['left'] / window.innerWidth * 100).toString(),
+        topPosition = ((window.pageYOffset/document.body.scrollHeight * 100) + 10).toString(),
+        // topPosition = (event.pageY / document.body.scrollHeight * 100).toString(),
+        //   leftPosition = (cardPosition['left'] / window.innerWidth * 100).toString(),
         //   rightPosition = ((event.pageX / window.innerWidth * 100)).toString(),
           rect = cards[node].getBoundingClientRect(),
           // Generate DOM elements
@@ -83,14 +84,18 @@ setTimeout(function() {
           birthdate = document.createElement('span');
 
         // Set classNames and attributes
-        basicInfo.className = 'details__basic';
+        xIcon.className = 'modal__close';
+        basicInfo.className = 'modal__basic';
+        name.className = 'modal__name';
+        email.className = 'modal__email';
+        city.className = 'modal__city';
         avy.src = users[node]['picture']['large'];
-        avy.className = 'details__avy';
-        moreInfo.className = 'details__more';
-        overlay.className = 'site__overlay';
+        avy.className = 'modal__avy';
+        moreInfo.className = 'modal__more';
+        overlay.className = 'directory__overlay';
 
         // Insert generated content for each element
-        xIcon.textContent = 'X';
+        xIcon.textContent = 'x';
         name.textContent =
           users[node]['name']['first'] +
           ' ' +
@@ -110,9 +115,10 @@ setTimeout(function() {
           users[node]['location']['postcode'];
         birthdate.textContent = users[node]['dob'];
 
-        employeeDetails.className = 'site__employee';
+        employeeDetails.className = 'modal';
         employeeDetails.style.top = topPosition + '%';
-        employeeDetails.style.left = leftPosition + '%';
+        // employeeDetails.style.left = leftPosition + '%';
+        // employeeDetails.style.left = '35%';
         // employeeDetails.style.right = rightPosition + '%';
         // Basic Info
         basicInfo.appendChild(xIcon);
@@ -129,6 +135,7 @@ setTimeout(function() {
 
         console.log(event);
         console.log(rect);
+        console.log(window.pageYOffset);
       }
     });
   }
