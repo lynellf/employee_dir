@@ -10,6 +10,9 @@
     display: block;
     color: gray;
     font-size: pem(10);
+    @include mq('sm') {
+      font-size: pem(11) !important;
+    }
     @include mq('med') {
       font-size: pem(14);
     }

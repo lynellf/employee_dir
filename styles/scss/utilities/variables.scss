@@ -4,7 +4,9 @@
 $tundora: #4A4A4A;
 $alto: #DFDFDF;
 $alabaster: #FCFCFC;
+$iron: #DEE0E4;
 
+$highlighted: $iron;
 $site-font: $tundora;
 $site-border: $alto;
 $site-background: $alabaster;
@@ -29,6 +31,6 @@ $font-stack-primary: 'Open Sans', sans-serif;
 //=====================================================
 //Breakpoints
 //=====================================================
-$breaks: ('sm': 425px, 'med': 868px, 'lg': 1310px);
+$breaks: ('sm': 867px, 'med': 868px, 'lg': 1310px);
 
 

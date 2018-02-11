@@ -1,0 +1,44 @@
+.employees {
+    align-self: center;
+    width: 95%;
+    @include flex();
+    @include mq('med') {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: pem(16);
+    }
+    @include mq('lg') {
+        align-self: center;
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-gap: pem(32);
+        width: auto;
+    }
+    
+    @include e('card') {
+        border: 2px solid $site-border;
+        display: flex;
+        justify-content: space-around;
+        padding: pem(25) pem(30);
+        border-radius: pem(6);
+        transition: all .2s ease-in-out;
+        visibility: visible;
+        opacity: 1;
+        &:hover {
+            cursor: pointer;
+            background: $iron;
+        }
+
+        @include mq('sm') {
+            margin-bottom: pem(16);
+        }
+
+        @include m('hidden') {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .2s ease-in-out;
+        }
+    }
+}

@@ -1,11 +1,81 @@
 .modal {
-    position: absolute;
     background: $alabaster;
-    z-index: 101;
     border-radius: pem(6);
     align-self: center;
     display: flex;
     flex-direction: column;
+    visibility: visible;
+    transition: all .1s ease-in-out;
+
+    @include mq('sm') {
+        padding-bottom: pem(16);
+    }
+
+    @include m('inactive') {
+        visibility: hidden;
+    }
+
+    @include e('container') {
+        position: absolute;
+        z-index: 101;
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
+
+        @include mq('lg') {
+            top: 25% !important;
+        }
+    }
+
+    @include e('back') {
+        align-self: center;
+        visibility: visible;
+        opacity: 1;
+        transition: all .1s ease-in-out;
+        @include mq('sm') {
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+            fill: $site-border;
+        }
+        &:active {
+            fill: $alabaster;
+        }
+        @include m('inactive') {
+            @include mq('sm') {
+                display: none;
+            }
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    @include e('forward') {
+        align-self: center;
+        visibility: visible;
+        opacity: 1;
+        transition: all .1s ease-in-out;
+        padding-left: pem(20);
+        @include mq('sm') {
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+            fill: $site-border;
+        }
+        &:active {
+            fill: $alabaster;
+        }
+        @include m('inactive') {
+            @include mq('sm') {
+                display: none;
+            }
+
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
     @include mq('sm') {
         width: pem(300);
     }
@@ -28,8 +98,14 @@
     @include e('close') {
         align-self: flex-end;
         display: block;
+        background: url('../../icons/cross-24.svg') no-repeat;
+        height: pem(24);
+        &:hover {
+            cursor: pointer;
+        }
         @include mq('sm') {
-            padding-right: pem(20);
+            margin-top: pem(10);
+            padding-right: pem(50);
         }
         @include mq('med') {
             padding-right: pem(50);
@@ -43,6 +119,11 @@
     }
 
     @include e('name') {
+        align-self: center;
+        margin-bottom: pem(8);
+    }
+
+    @include e('username') {
         align-self: center;
         margin-bottom: pem(8);
     }
@@ -65,7 +146,6 @@
         flex-direction: column;
         align-items: flex-start;
         width: 85%;
-        // margin: pem(16) pem(16);
     }
 
     @include e('phone') {
@@ -84,5 +164,6 @@
         align-self: center;
         color: $site-font;
         margin-bottom: pem(8);
+        text-align: center;
     }
 }

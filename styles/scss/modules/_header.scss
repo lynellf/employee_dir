@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 pem(16);
+
+    @include mq('sm') {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    @include e('title') {
+        color: $site-font;
+        @include mq('sm') {
+            font-size: pem(16);
+            align-self: center;
+        }
+    }
+
+    @include e('search') {
+        border-radius: pem(6);
+        padding: pem(8);
+        border: thin solid $site-border;
+        
+        @include mq('sm') {
+            margin-bottom: pem(16);
+        }
+    }
+}

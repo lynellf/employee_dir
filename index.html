@@ -13,11 +13,22 @@
 <body>
     <main class="directory">
         <div class="directory__container">
-            <h2 class="directory__title">Awesome Startup Employee Directory</h2>
-            <div class="users"></div>
+            <div class="header">
+                <h2 class="header__title">Awesome Startup Employee Directory</h2>
+                <input type="text" class="header__search" placeholder="Search Employees">
+            </div>
+            <div class="employees"></div>
         </div>
-        <div id="overlay"></div>
-        <div id="employeeDetails"></div>
+        <div id="overlay" class="directory__overlay--inactive"></div>
+        <div class="modal__container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" height="50" class="modal__back--inactive" id="modalBack">
+                <path d="M10 20l3-3-7-7 7-7-3-3L0 10l10 10z" />
+            </svg>
+            <div id="employeeDetails"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" height="50" class="modal__forward--inactive" id="modalForward">
+                <path d="M3 20l-3-3 7-7-7-7 3-3 10 10L3 20z" />
+            </svg>
+        </div>
     </main>
     <!-- Use jQuery for AJAX functions -->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
