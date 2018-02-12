@@ -1,5 +1,5 @@
-# employee_dir
-Treehouse Project 10
+# employee_dir (Treehouse Project 10)
+
 The employee directory project involved obtaining 'employee' information using the [Random User Generator API.](https://randomuser.me/) With the data, 'employee' information is dynamically generated and displayed to the DOM.
 
 Objective Breakdown:
