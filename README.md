@@ -2,6 +2,8 @@
 
 The employee directory project involved obtaining 'employee' information using the [Random User Generator API.](https://randomuser.me/) With the data, 'employee' information is dynamically generated and displayed to the DOM.
 
+[Veiw Live Project Here](https://ezellfrazier.com/projects/employees/)
+
 Objective Breakdown:
 
 ------------------------
